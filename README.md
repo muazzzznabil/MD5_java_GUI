@@ -37,10 +37,10 @@ java MD5GUI
 ## 📷 Screenshots
 - Insert Input
 ![image](https://github.com/user-attachments/assets/65ef4674-d245-4651-b34f-878aba5c6c53)
-
-- Result
+<br\>
+- Result 
 ![image](https://github.com/user-attachments/assets/f5db83da-214e-486d-a1b1-8a6de3d75536)
-
+<br\>
 - Light Mode
 ![image](https://github.com/user-attachments/assets/f21dfcd7-17b0-493e-8791-9905d61b1aa6)
 
