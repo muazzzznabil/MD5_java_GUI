@@ -1,0 +1,62 @@
+ALGORITHM MD5_Hash(input_string)
+
+    // Initialize Constants
+    Define S[64] as rotation amounts
+    Define K[64] as integer array based on sine function
+    Define initial values A0, B0, C0, D0
+
+    // Prepare Message
+    Convert input_string to bytes
+    Calculate message length in bits
+    Add padding to make length congruent to 448 mod 512
+    Append original length as 64-bit value
+
+    // Initialize Hash Values
+    A = A0
+    B = B0
+    C = C0
+    D = D0
+
+    // Process Message in 512-bit Blocks
+    FOR each 512-bit block
+        Break block into 16 32-bit words M[0..15]
+        
+        // Save current hash values
+        a = A
+        b = B
+        c = C
+        d = D
+
+        // Main Loop (64 iterations)
+        FOR k = 0 to 63
+            IF k between 0 and 15
+                f = (b AND c) OR (NOT b AND d)
+                g = k
+            ELSE IF k between 16 and 31
+                f = (d AND b) OR (NOT d AND c)
+                g = (1 + 5k) mod 16
+            ELSE IF k between 32 and 47
+                f = b XOR c XOR d
+                g = (5 + 3k) mod 16
+            ELSE
+                f = c XOR (b OR NOT d)
+                g = (7k) mod 16
+            
+            temp = d
+            d = c
+            c = b
+            b = b + leftRotate((a + f + K[k] + M[g]), S[k])
+            a = temp
+        END FOR
+
+        // Add result to current hash values
+        A = A + a
+        B = B + b
+        C = C + c
+        D = D + d
+    END FOR
+
+    // Combine hash values
+    RETURN concatenate(A,B,C,D) as hex string
+
+END ALGORITHM

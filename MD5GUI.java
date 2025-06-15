@@ -240,7 +240,7 @@ public class MD5GUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Use the recommended way to start a Swing application
+        
         SwingUtilities.invokeLater(MD5GUI::new);
     }
 }
