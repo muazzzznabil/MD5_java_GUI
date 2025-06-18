@@ -152,7 +152,6 @@ public class MD5GUI extends JFrame {
     }
 
 
-    // MD5 Implementation (Unchanged)
     private static final int[] S = {
         7,12,17,22, 7,12,17,22, 7,12,17,22, 7,12,17,22,
         5,9,14,20, 5,9,14,20, 5,9,14,20, 5,9,14,20,
@@ -238,6 +237,8 @@ public class MD5GUI extends JFrame {
         }
         return sb.toString();
     }
+
+
 
     public static void main(String[] args) {
         
